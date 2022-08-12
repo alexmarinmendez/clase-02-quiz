@@ -4,7 +4,7 @@ import { UI } from './models/UI.js'
 
 const renderPage = (quiz, ui) => {
     if (quiz.isEnded()) {
-        console.log('That\'s all folks!')
+        ui.showScore(quiz.score)
     } else {
         ui.showQuestion(quiz.getCurrentQuestion().text)
         ui.showChoices(quiz.getCurrentQuestion().choices, (currentChoice) => {

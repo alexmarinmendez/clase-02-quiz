@@ -1,4 +1,9 @@
 import { questionsArray } from "./questions.js"
+import { Quiz } from "./models/Quiz.js"
 
-const result = questionsArray[0].isCorrectAnswer('Machine Code')
-console.log(result)
+const main = () => {
+    const quiz = new Quiz(questionsArray)
+    console.log(quiz)
+}
+
+main()

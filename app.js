@@ -11,6 +11,7 @@ const renderPage = (quiz, ui) => {
             quiz.validateAndContinue(currentChoice)
             renderPage(quiz, ui)
         })
+        ui.showProgress(quiz.questionIndex +1, questionsArray.length)
     }
 }
 

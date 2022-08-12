@@ -3,12 +3,16 @@ import { Quiz } from "./models/Quiz.js"
 import { UI } from './models/UI.js'
 
 const renderPage = (quiz, ui) => {
-    ui.showQuestion(quiz.getCurrentQuestion().text)
-    ui.showChoices(quiz.getCurrentQuestion().choices, (currentChoice) => {
-        quiz.validateAndContinue(currentChoice)
-        console.log(quiz.score)
-        renderPage(quiz, ui)
-    })
+    if (quiz.isEnded()) {
+        console.log('That\'s all folks!')
+    } else {
+        ui.showQuestion(quiz.getCurrentQuestion().text)
+        ui.showChoices(quiz.getCurrentQuestion().choices, (currentChoice) => {
+            quiz.validateAndContinue(currentChoice)
+            console.log(quiz.score)
+            renderPage(quiz, ui)
+        })
+    }
 }
 
 const main = () => {

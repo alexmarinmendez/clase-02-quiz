@@ -10,6 +10,7 @@ export class Quiz {
     }
 
     validateAndContinue(answer) {
+        console.log(answer)
         if (this.getCurrentQuestion().isCorrectAnswer(answer)) {
             this.score++
         }

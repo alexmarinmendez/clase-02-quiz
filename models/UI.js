@@ -8,7 +8,8 @@ export class UI {
         const choicesContainer = document.getElementById("choices")
         for (let i=0; i<choices.length; i++) {
             const button = document.createElement("button")
-            button.innerText = "button text injected!"
+            button.innerText = choices[i]
+            button.className = "button"
             choicesContainer.append(button)
         }
     }

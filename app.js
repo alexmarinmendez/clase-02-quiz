@@ -9,7 +9,6 @@ const renderPage = (quiz, ui) => {
         ui.showQuestion(quiz.getCurrentQuestion().text)
         ui.showChoices(quiz.getCurrentQuestion().choices, (currentChoice) => {
             quiz.validateAndContinue(currentChoice)
-            console.log(quiz.score)
             renderPage(quiz, ui)
         })
     }

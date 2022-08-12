@@ -7,6 +7,7 @@ const main = () => {
     const ui = new UI()
 
     ui.showQuestion(quiz.getCurrentQuestion().text)
+    ui.showChoices(quiz.getCurrentQuestion().choices)
 }
 
 main()
